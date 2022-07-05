@@ -4,8 +4,8 @@ pool:
 steps:
 - task: Gradle@2
   inputs:
-    workingDirectory: ''
-    gradleWrapperFile: 'gradlew'
+    workingDirectory: '$(system.defaultWorkingDirectory)/AndroidApps/MyApp'
+    gradleWrapperFile: '$(system.defaultWorkingDirectory)/AndroidApps/MyApp/gradlew'
     gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
@@ -25,5 +25,4 @@ steps:
   inputs:
     pathToPublish: '$(build.artifactStagingDirectory)'
     artifactName: 'drop'
-    artifactType: 'container'
   displayName: Publish artifacts
