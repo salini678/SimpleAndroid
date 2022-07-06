@@ -2,14 +2,16 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
-- task: Gradle@2
+- task: Gradle@3
   inputs:
-    workingDirectory: '$(system.defaultWorkingDirectory)/AndroidApps/MyApp'
     gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    publishJUnitResults: false
+    workingDirectory: 'C:\Users\SATYA\Downloads\gradle-wrapper'
+    tasks: 'build'
+    publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    tasks: 'assembleDebug'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: false
+    spotBugsAnalysis: false
 
 - task: CopyFiles@2
   inputs:
