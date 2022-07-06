@@ -5,7 +5,7 @@ steps:
 - task: Gradle@3
   inputs:
     gradleWrapperFile: 'gradlew'
-    workingDirectory: 'C:\Users\SATYA\Downloads\gradle-wrapper'
+    workingDirectory: 'AndroidApps/MyApp'
     tasks: 'build'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
